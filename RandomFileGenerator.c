@@ -1,3 +1,8 @@
+/*
+ * Author:  Arthur Hinds 2013
+ * Create a randomly generated binary file.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <openssl/rand.h>
@@ -22,7 +27,10 @@ int main(int argc, char **argv){
     }
 
     for(i=0;i<filesize;i++){
-        RAND_bytes(buffer, 1024);
+        if(!RAND_bytes(buffer, 1024)){
+            printf("Randomness failed\n");
+            return -1;
+        }
         fwrite(buffer, sizeof(buffer), 1, fd);
 
     }
