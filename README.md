@@ -19,3 +19,8 @@ ex.
 
 ./RandomFileGenerator fiveMegs.bin 5
 
+Author
+======
+
+Arthur Hinds<br>
+July 2013
